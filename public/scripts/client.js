@@ -24,11 +24,14 @@ function displayBooks(books) {
   books.forEach(function(book){
     var $li = $('<li></li>');
 
-    $li.append('<p><strong>' + book.title + '</strong></p>');
+    $li.append('<p><big><strong>' + book.title + '</big></strong></p>');
     $li.append('<p><em>' + book.author + '</em></p>');
 
     var date = new Date(book.publication_date).toDateString();
-    $li.append('<p><time>' + date + '</time></p>');
+    $li.append('<p><time><strong>Publication Date: </strong>' + date + '</time></p>');
+
+    $li.append('<p><strong>Edition: </strong>' + book.edition + '</p>');
+    $li.append('<p><strong>Publisher: </strong>' + book.publisher + '</p>');
 
     $('#book-list').append($li);
   });

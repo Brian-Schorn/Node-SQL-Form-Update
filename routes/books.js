@@ -3,7 +3,7 @@ var router = express.Router();
 
 var pg = require("pg");
 
-var config = { database: "library" };
+var config = { database: "Library" };
 
 // initialize connection Pool
 // think of as 'how I connect to DB'
@@ -57,8 +57,8 @@ router.post("/", function(req, res) {
       // 3. callback - function to run after the database gives us our result
       //               takes an error object and the result object as it's args
       client.query(
-        "INSERT INTO books (title, author, publication_date) VALUES ($1, $2, $3) RETURNING *;",
-        [ req.body.title, req.body.author, req.body.published ],
+        "INSERT INTO books (title, author, publication_date, edition, publisher) VALUES ($1, $2, $3, $4, $5) RETURNING *;",
+        [ req.body.title, req.body.author, req.body.published, req.body.edition, req.body.publisher],
         function(err, result) {
           done();
           if (err) {
