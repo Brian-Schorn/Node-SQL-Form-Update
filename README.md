@@ -7,3 +7,4 @@
 * Use `pool.connect(...)` to connect to the database
 * Use `client.query(...)` to query the database with SQL
 * When creating queries with client-submitted data, always use the prepared statement pattern (see router.post in server/routes/books.js)
+# prime-group-joins
