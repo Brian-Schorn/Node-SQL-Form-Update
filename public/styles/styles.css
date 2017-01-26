@@ -9,8 +9,10 @@ h2 {
 
 .delete {
   background-color: red;
+  font-weight: bold;
 }
 
 .save {
-  background-color: green;
+  background-color: lightgreen;
+  font-weight: bold;
 }
